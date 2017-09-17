@@ -44,6 +44,7 @@ def validate_json(f):
 def hello():
     return "Hello World"
 
+
 @app.route('/master/api/run',methods=['POST'])
 @auth.login_required
 def master(): 
