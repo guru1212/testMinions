@@ -56,8 +56,13 @@ The above dockerize steps will install Python2.7 and the required modules/librar
 2) In restclient, select method as post and URL - http://<hostname>:5000//master/api/run/
   Note: hostname is the default VM of the docker whcih gets configured at the time of launching Docker Quickstart Terminal. This IP should be displayed once docker is launched successfully.   
   
-3) Add authentication: - Authentication->Basic Authentication: Username -> admin Passworrd -> pass123
+3) Add authentication: - Authentication->Basic Authentication: **Username** -> admin **Passworrd** -> pass123
 
-4) Add headers: - Headers->Custom Headers-> Name : Content-Type Value: application/json
+4) Add headers: - Headers->Custom Headers-> **Name** : Content-Type **Value**: application/json
 
-5) Add the above mentioned json payload in the body and click send.
+5) Add the above mentioned sample json payload in the body and click send. Below is the Cisco VM that was created for this task. So same can be user for the test as well but the running application should be in cisco network.
+  "host":"vm-gsethura-002",
+	"username" : "root",
+	"password":"Cisco123",
+
+Or a differnt hosts can also be used but above mentioned data ie. hostname, username, password is required to be provided for the APP to login to that host and to perform the mentioned operations in the payload.
