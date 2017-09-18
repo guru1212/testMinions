@@ -40,19 +40,19 @@ Sample JSON request as below.
 
 **How to Dockerize Python Flask project:**
 
-Once the files from GIT hub is pulled to local, launch Docker Quickstart Terminal and change directory to cloned local project directory - testMinions/API/ where there is a docker file and execute the below commands to build docker image and to run tha application.
+Once the files from GIT hub is pulled to local, launch Docker Quickstart Terminal and change directory to cloned local project directory - testMinions/API/ where there is a docker file and execute the below commands to build docker image and to run the application.
 
 **Build docker image:** 
 
-docker build -t flask-python .
+		docker build -t flask-python .
 
 **To list the docker image created:** 
 
-docker images
+		docker images
 
 **To run the app inside the container:** 
 
-docker run -d -p 5000:5000 --name flask-container flask-python
+		docker run -d -p 5000:5000 --name flask-container flask-python
 
 The above dockerize steps will install Python2.7 and the required modules/libraries and will start the python API application.
 
