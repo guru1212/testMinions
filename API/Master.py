@@ -52,29 +52,14 @@ def master():
      # get host, username, password
     dat = {'host':request.json['host'], 'username':request.json['username'], 'password':request.json['password']}
     #Pass ssh detatils to minion
-    master = testMinions(dat['host'], dat['username'], dat['password'])
-    #get list of operations to be performed
+    #master = testMinions(dat['host'], dat['username'], dat['password'])
+    master = testMinions()
+    master.sshConnect(dat['host'], dat['username'], dat['password'])
     operationsList = request.json['todo']
     listMinionResp = master.testsshMinion(operationsList)
     print "---master----", listMinionResp
-    
     return jsonify(listMinionResp)
-
-
-
-@app.route('/master/api/json',methods=['POST'])
-@validate_json
-def testjson():
-    # get host, username, password
-    dat = {'host':request.json['host'], 'username':request.json['username'], 'password':request.json['password']}
-    #Pass ssh detatils to minion
-    master = testMinions(dat['host'], dat['username'], dat['password'])
-    #get list of operations to be performed
-    operationsList = request.json['todo']
-    listMinionResp = master.testsshMinion(operationsList)
-    print "---master----", listMinionResp
-    
-    return listMinionResp
+        
 
 
 if __name__ == '__main__':

@@ -4,20 +4,23 @@ Created on Sep 17, 2017
 @author: gsethura
 '''
 import paramiko
+import socket
 class testMinions(object):
     '''
     Minions class to do operations mentioned in the payload
     '''
             
-    def __init__(self, host, uname, pwd):
+    def __init__(self):
         '''
         connect to VM
         '''
+    def sshConnect(self, host, uname, pwd ):
+        
         self.sshCl = paramiko.SSHClient()
         self.sshCl.set_missing_host_key_policy(paramiko.AutoAddPolicy())
-        print "connecting"
-        self.sshCl.connect( hostname = host, username = uname, password=pwd )
-        print "connected"
+        print "Connecting"
+        self.sshCl.connect( hostname = host, username = uname, password=pwd )        
+        print "Connected"
         
     def sshMinion(self):
         stdin,stdout,stderr = self.sshCl.exec_command('ls')

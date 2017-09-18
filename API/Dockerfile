@@ -8,4 +8,4 @@ RUN pip install -r requirements.txt
 COPY . /app
 
 ENTRYPOINT [ "python" ]
-CMD [ "/app/src/Master.py" ]
+CMD [ "Master.py" ]
