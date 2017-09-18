@@ -1,7 +1,7 @@
-# testMinions
+###### testMinions
 Python Flask API project
 
-GIT remote repository URL:
+** GIT remote repository URL: **
 https://github.com/guru1212/testMinions.git
 
 Objective: This Python Flask REST API project acts as a master which control a bunch of servers as minions.
