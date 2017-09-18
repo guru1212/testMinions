@@ -40,7 +40,7 @@ Sample JSON request as below.
 
 **How to Dockerize Python Flask project:**
 
-Once the files from GIT hub is pulled to local, launch Docker Quickstart Terminal and change directory to cloned local project directory  testMinions/API/ where there is a docker file.
+Once the files from GIT hub is pulled to local, launch Docker Quickstart Terminal and change directory to cloned local project directory - testMinions/API/ where there is a docker file and execute the below commands to build docker image and to run tha application.
 
 **Build docker image:** 
 
@@ -59,15 +59,25 @@ The above dockerize steps will install Python2.7 and the required modules/librar
 **To check the API:**
 1) Open RestClient in mozilla Firefox. If this add-on is not installed then can be added to mozilla - https://addons.mozilla.org/en-US/firefox/addon/restclient/
 
-2) In restclient, select method as **post** and URL - **http://\<hostname\>:5000//master/api/run/**
-	
-  Note: hostname is the default VM of the docker whcih gets configured at the time of launching Docker Quickstart Terminal. This IP should be displayed once docker is launched successfully.   
-  
+**Get Method:**
+
+2) In restclient, select method as **GET** and URL - **http://\<hostname\>:5000/**
+
+  Note: hostname is the default VM of the docker whcih gets configured at the time of launching Docker Quickstart Terminal. This IP should be displayed once docker is launched successfully. 
+
 3) Add authentication: - Authentication->Basic Authentication: **Username** -> admin **Passworrd** -> pass123
 
 4) Add headers: - Headers->Custom Headers-> **Name** : Content-Type **Value**: application/json
 
-5) Add the above mentioned sample json payload in the body and click send. Following is the Cisco VM that was created for this task. Same can be used for the test as well but the running application should be dockerized in cisco network.
+Clicl Send.
+
+This get method will just display **Hello World** in restclients response body.
+
+**Post Method:**
+
+5) In restclient, select method as **POST** and URL - **http://\<hostname\>:5000//master/api/run/**
+
+6) Add the above mentioned sample json payload in the body and click send. Following is the Cisco VM that was created for this task. Same can be used for the test as well but the running application should be dockerized in cisco network.
 
   	"host":"vm-gsethura-002",
 	"username" : "root",
