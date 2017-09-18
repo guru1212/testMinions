@@ -9,7 +9,7 @@ Python Flask API project
 
 This project exposes the below URL to the client to receive the necessary data in JSON format to login to minions and perform some operations.
 
-http://<hostname:5000>/master/api/run/
+		http://<hostname:5000>/master/api/run/
 
 **Data required to perform the operations:**
 
@@ -69,7 +69,7 @@ The above dockerize steps will install Python2.7 and the required modules/librar
 
 4) Add headers: - Headers->Custom Headers-> **Name** : Content-Type **Value**: application/json
 
-Clicl Send.
+Click Send.
 
 This get method will just display **Hello World** in restclients response body.
 
