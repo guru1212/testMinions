@@ -3,7 +3,7 @@ Python Flask API project
 
 **GIT remote repository URL:**
 
-https://github.com/guru1212/testMinions.git
+		https://github.com/guru1212/testMinions.git
 
 **Objective:** This Python Flask REST API project acts as a master which control a bunch of servers as minions.
 
@@ -20,23 +20,23 @@ http://<hostname:5000>/master/api/run/
 Sample JSON request as below.
 
 
-{
+		{
 
-"host":"vm-gsethura-002",
+		"host":"vm-gsethura-002",
 
-"username" : "root",
+		"username" : "root",
 
-"password":"Cisco123",
+		"password":"Cisco123",
 
-"todo" : [
+		"todo" : [
 
-{"operation1":"mkdir"},
+		{"operation1":"mkdir"},
 
-{"operation2":"ls"}
+		{"operation2":"ls"}
 
-]
+		]
 
-}
+		}
 
 **How to Dockerize Python Flask project:**
 
