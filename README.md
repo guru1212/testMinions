@@ -24,6 +24,7 @@ Sample JSON request as below.
 	]
 }
 
-Dockerize Python Flask
-Once the files from GIT hub is pulled, change directory to that path.
+How to Dockerize Python Flask project:
+Once the files from GIT hub is pulled to local, launch Docker Quickstart Terminal and change directory to that path.
+
 
