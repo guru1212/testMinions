@@ -40,7 +40,7 @@ Sample JSON request as below.
 
 **How to Dockerize Python Flask project:**
 
-Once the files from GIT hub is pulled to local, launch Docker Quickstart Terminal and change directory to that path.
+Once the files from GIT hub is pulled to local, launch Docker Quickstart Terminal and change directory to cloned local project directory  testMinions/API/ where there is a docker file.
 
 **Build docker image:** 
 
