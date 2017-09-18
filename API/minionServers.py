@@ -29,8 +29,8 @@ class testMinions(object):
         for operation in commands:
             for k,v in operation.items():
                 print k, ":", v
-            stdin,stdout,stderr = self.sshCl.exec_command(v)
-            out = stdout.readlines()
-            print out
+                stdin,stdout,stderr = self.sshCl.exec_command(v)
+                out = stdout.readlines()
+                print out
         self.sshCl.close()
-        return '\n'.join (out)
+        return out

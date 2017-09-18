@@ -8,7 +8,7 @@ from flask import Flask, request,jsonify
 from flask_httpauth import HTTPBasicAuth
 from functools import wraps
 from werkzeug.exceptions import BadRequest
-from minions.minionServers import testMinions
+from minionServers import testMinions
 
 app = Flask(__name__)
 auth = HTTPBasicAuth()
@@ -47,14 +47,18 @@ def hello():
 
 @app.route('/master/api/run',methods=['POST'])
 @auth.login_required
+@validate_json
 def master(): 
+     # get host, username, password
     dat = {'host':request.json['host'], 'username':request.json['username'], 'password':request.json['password']}
+    #Pass ssh detatils to minion
     master = testMinions(dat['host'], dat['username'], dat['password'])
-    list = master.sshMinion()
-    print list
-    print type(list)
+    #get list of operations to be performed
+    operationsList = request.json['todo']
+    listMinionResp = master.testsshMinion(operationsList)
+    print "---master----", listMinionResp
     
-    return jsonify(list)
+    return jsonify(listMinionResp)
 
 
 
@@ -70,7 +74,7 @@ def testjson():
     listMinionResp = master.testsshMinion(operationsList)
     print "---master----", listMinionResp
     
-    return jsonify(listMinionResp)
+    return listMinionResp
 
 
 if __name__ == '__main__':
