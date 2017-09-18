@@ -42,4 +42,22 @@ Sample JSON request as below.
 
 Once the files from GIT hub is pulled to local, launch Docker Quickstart Terminal and change directory to that path.
 
+**Build docker image:** docker build -t flask-python .
 
+**To list the docker image created:** docker images
+
+**To run the app inside the container:** docker run -d -p 5000:5000 --name flask-container flask-python
+
+The above dockerize steps will install Python2.7 and the required modules/libraries and will start the python API application.
+
+**To check the API:**
+1) Open RestClient in mozilla Firefox. If this add-on is not installed then can be added to mozilla - https://addons.mozilla.org/en-US/firefox/addon/restclient/
+
+2) In restclient, select method as post and URL - http://<hostname>:5000//master/api/run/
+  Note: hostname is the default VM of the docker whcih gets configured at the time of launching Docker Quickstart Terminal. This IP should be displayed once docker is launched successfully.   
+  
+3) Add authentication: - Authentication->Basic Authentication: Username -> admin Passworrd -> pass123
+
+4) Add headers: - Headers->Custom Headers-> Name : Content-Type Value: application/json
+
+5) Add the above mentioned json payload in the body and click send.
